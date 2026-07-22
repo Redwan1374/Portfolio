@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, ExternalLink, FileText } from 'lucide-react';
+import cvPdf from '../../assets/cv.pdf';
 
 interface CVModalProps {
   isOpen: boolean;
@@ -9,8 +10,8 @@ interface CVModalProps {
 export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
-  // Check if PDF exists
-  const cvPdfPath = "/assets/cv.pdf";
+  // Use imported PDF so Vite will include it in the build output
+  const cvPdfPath = cvPdf;
 
   const handleOpenPdf = () => {
     window.open(cvPdfPath, '_blank');

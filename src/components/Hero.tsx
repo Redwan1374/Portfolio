@@ -14,6 +14,7 @@ import {
   Facebook
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import profilePhoto from '../../assets/profile-photo.jpg';
 
 interface HeroProps {
   onOpenCVModal: () => void;
@@ -36,8 +37,8 @@ export const Hero: React.FC<HeroProps> = ({
     }
   };
 
-  // Default fallback avatar styling with initials or image
-  const defaultAvatar = "/assets/profile-photo.jpg";
+  // Default fallback avatar styling with initials or image (imported so Vite includes it)
+  const defaultAvatar = profilePhoto;
 
   return (
     <section id="home" className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white overflow-hidden">
